@@ -19,8 +19,6 @@ export const getKategoriAction = () => {
 				url: '/kategori-pertanian'
 			})
 
-			console.log('data', response.data.data)
-
 			dispatch({ type: GET_ALL_KATEGORI_SUCCESS, payload: response.data.data })
 		} catch (error) {
 			// console.log(error)
@@ -30,7 +28,6 @@ export const getKategoriAction = () => {
 }
 
 export const getKategoriActionByID = (id) => {
-	console.log(id)
 	return async (dispatch) => {
 		try {
 			dispatch({ type: GET_BY_ID_KATEGORI_REQUEST })
@@ -40,7 +37,6 @@ export const getKategoriActionByID = (id) => {
 				url: `/kategori-pertanian/${id}`
 			})
 
-			console.log('response id', response.data.data)
 			dispatch({
 				type: GET_BY_ID_KATEGORI_SUCCESS,
 				payload: response.data.data
